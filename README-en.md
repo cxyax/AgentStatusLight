@@ -29,7 +29,38 @@ It is mainly designed to help with these situations:
 - Detect recent task failures, API issues, or token-related problems through red or fault lights
 - Open the data directory or locate the exact status file when the displayed state looks wrong
 
-# 2. Features
+# 2. Screenshots
+
+<table>
+  <tr>
+    <td align="center"><img src="img/setting01.png" alt="Settings Window" width="720"></td>
+  </tr>
+  <tr>
+    <td align="center">Settings Window</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center"><img src="img/floating_window_light.png" alt="Light Floating Panel" width="360"></td>
+    <td align="center"><img src="img/floating_window_black.png" alt="Dark Floating Panel" width="360"></td>
+  </tr>
+  <tr>
+    <td align="center">Light Floating Panel</td>
+    <td align="center">Dark Floating Panel</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center"><img src="img/single_light.png" alt="Single Light Mode" width="360"></td>
+  </tr>
+  <tr>
+    <td align="center">Single Light Mode</td>
+  </tr>
+</table>
+
+# 3. Features
 
 - [x] Aggregated menu bar status light for overall state at a glance
 - [x] Dedicated settings window for status lights, theme, refresh frequency, and alerts
@@ -41,7 +72,7 @@ It is mainly designed to help with these situations:
 - [x] Diagnostic tools for opening the data directory and locating the current status file
 - [x] Directory watching combined with polling for both responsiveness and stability
 
-# 3. Light Semantics
+# 4. Light Semantics
 
 Current light meanings are:
 
@@ -59,7 +90,7 @@ The aggregated menu bar light uses this priority:
 - Green has higher priority than gray
 - The fault light is independent and does not share the same meaning as regular status lights
 
-# 4. Requirements
+# 5. Requirements
 
 - Operating system: macOS 13.0 or later
 - Hardware: Apple Silicon and Intel Mac
@@ -71,22 +102,22 @@ The project currently depends on some newer system capabilities, including:
 - SwiftUI `GroupedFormStyle`
 - Swift concurrency `Task.sleep(for:)`
 
-# 5. Quick Start
+# 6. Quick Start
 
-## 5.1 Clone the repository
+## 6.1 Clone the repository
 
 ```bash
 git clone <your-repository-url>
 cd agent-status-light-git
 ```
 
-## 5.2 Open with Xcode
+## 6.2 Open with Xcode
 
 ```bash
 open agent-status-light.xcodeproj
 ```
 
-## 5.3 Run the app
+## 6.3 Run the app
 
 Select the `agent-status-light` scheme in Xcode and run it directly.
 
@@ -100,7 +131,7 @@ After launch, you will get:
 
 If popup alerts are enabled, macOS may ask for notification permission.
 
-# 6. Status Sources
+# 7. Status Sources
 
 The app infers runtime state from local files and session records. By default, it reads the following locations:
 
@@ -118,15 +149,15 @@ Notes:
 - Codex status is mainly inferred from the SQLite state database, session index, and session JSONL files
 - The app uses both directory watching and polling, where watching handles real-time refresh and polling serves as a fallback
 
-# 7. Usage
+# 8. Usage
 
-## 7.1 Menu Bar
+## 8.1 Menu Bar
 
 - The menu bar shows the aggregated overall light state
 - Claude is fixed on the left and Codex is fixed on the right
 - If an agent is disabled, its light becomes gray or is excluded from aggregation
 
-## 7.2 Settings Window
+## 8.2 Settings Window
 
 The settings window currently includes these sections:
 
@@ -149,7 +180,7 @@ You can use it to:
 - Enable or disable voice alerts and popup alerts
 - Change the custom alert audio path
 
-## 7.3 Diagnostics
+## 8.3 Diagnostics
 
 If the displayed state looks incorrect, use this order for troubleshooting:
 
@@ -158,7 +189,7 @@ If the displayed state looks incorrect, use this order for troubleshooting:
 3. Click `Open Data Directory` to verify the watched paths
 4. Click `Reveal Status File` to inspect the exact source used for the current state
 
-# 8. Project Structure
+# 9. Project Structure
 
 ```text
 agent-status-light-git
@@ -184,14 +215,14 @@ Directory responsibilities:
 - `Assets.xcassets`: icons, colors, and bundled assets
 - `Audio`: default alert audio
 
-# 9. Use Cases
+# 10. Use Cases
 
 - You use Claude Code and Codex side by side on your local machine
 - You often leave agent tasks running in the background and want an instant visual signal
 - You want fast desktop feedback when an agent is waiting for your confirmation or input
 - You need to inspect status source files when the light behavior does not match your expectation
 
-# 10. Roadmap
+# 11. Roadmap
 
 This project is intentionally focused on status collection, status aggregation, and desktop presentation. It does not execute conversations or tasks by itself.
 
@@ -202,13 +233,13 @@ Possible future directions include:
 - More menu bar icon styles and floating panel visual options
 - Richer notification, alert, and diagnostic capabilities
 
-# 11. Contact
+# 12. Contact
 
 If you run into issues or want support for more agent types, you can reach out through:
 
 - WeChat: `cxyax_`
 - Email: `gaoxin1153@163.com`
 
-# 12. License
+# 13. License
 
 This project is released under the [MIT License](./LICENSE).

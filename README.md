@@ -29,7 +29,38 @@ Agent Status Light 是一个为本地 AI 编码工作流准备的桌面状态感
 - 最近任务异常、接口故障或令牌问题时，可以通过红灯或故障灯快速发现
 - 状态显示不准时，可以直接打开数据目录或定位状态文件排查
 
-# 2、功能特性
+# 2、界面预览
+
+<table>
+  <tr>
+    <td align="center"><img src="img/setting01.png" alt="设置窗口" width="720"></td>
+  </tr>
+  <tr>
+    <td align="center">设置窗口</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center"><img src="img/floating_window_light.png" alt="浅色悬浮窗" width="360"></td>
+    <td align="center"><img src="img/floating_window_black.png" alt="深色悬浮窗" width="360"></td>
+  </tr>
+  <tr>
+    <td align="center">浅色悬浮窗</td>
+    <td align="center">深色悬浮窗</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center"><img src="img/single_light.png" alt="单灯模式" width="360"></td>
+  </tr>
+  <tr>
+    <td align="center">单灯模式</td>
+  </tr>
+</table>
+
+# 3、功能特性
 
 - [x] 菜单栏聚合状态灯，使用单灯快速表达当前整体状态
 - [x] 独立设置窗口，集中管理状态灯、主题、刷新频率和提醒方式
@@ -41,7 +72,7 @@ Agent Status Light 是一个为本地 AI 编码工作流准备的桌面状态感
 - [x] 支持诊断排查，可直接打开数据目录或定位当前状态文件
 - [x] 同时使用目录监听与轮询刷新，兼顾实时性与稳定性
 
-# 3、状态语义
+# 4、状态语义
 
 当前版本的灯色与语义对应关系如下：
 
@@ -59,7 +90,7 @@ Agent Status Light 是一个为本地 AI 编码工作流准备的桌面状态感
 - 绿灯优先级高于灰灯
 - 故障灯为独立告警灯，不与普通状态灯共用语义
 
-# 4、系统要求
+# 5、系统要求
 
 - 操作系统：macOS 13.0 及以上版本
 - 芯片平台：Apple Silicon 与 Intel Mac
@@ -71,22 +102,22 @@ Agent Status Light 是一个为本地 AI 编码工作流准备的桌面状态感
 - SwiftUI 的 `GroupedFormStyle`
 - Swift 并发中的 `Task.sleep(for:)`
 
-# 5、快速开始
+# 6、快速开始
 
-## 5.1、克隆项目
+## 6.1、克隆项目
 
 ```bash
 git clone <你的仓库地址>
 cd agent-status-light-git
 ```
 
-## 5.2、使用 Xcode 打开
+## 6.2、使用 Xcode 打开
 
 ```bash
 open agent-status-light.xcodeproj
 ```
 
-## 5.3、运行应用
+## 6.3、运行应用
 
 在 Xcode 中选择 `agent-status-light` Scheme，直接运行即可。
 
@@ -100,7 +131,7 @@ open agent-status-light.xcodeproj
 
 如果你开启了弹窗提醒，系统可能会请求通知权限。
 
-# 6、状态源说明
+# 7、状态源说明
 
 项目当前基于本地文件与会话记录推断状态，默认读取如下目录或文件：
 
@@ -118,15 +149,15 @@ open agent-status-light.xcodeproj
 - Codex 主要通过 SQLite 状态库、会话索引和 session JSONL 推断当前线程状态
 - 项目会同时使用目录监听与轮询刷新，目录监听负责实时刷新，轮询作为兜底机制
 
-# 7、使用说明
+# 8、使用说明
 
-## 7.1、菜单栏
+## 8.1、菜单栏
 
 - 菜单栏会展示聚合后的总灯状态
 - 左侧固定为 Claude，右侧固定为 Codex
 - 当某个 Agent 被关闭时，对应灯会变灰或不参与聚合
 
-## 7.2、设置窗口
+## 8.2、设置窗口
 
 设置窗口当前包含以下分类：
 
@@ -149,7 +180,7 @@ open agent-status-light.xcodeproj
 - 开启或关闭语音提醒、弹窗提醒
 - 修改提醒音频路径
 
-## 7.3、诊断排查
+## 8.3、诊断排查
 
 如果你发现状态显示不准确，建议按下面顺序排查：
 
@@ -158,7 +189,7 @@ open agent-status-light.xcodeproj
 3、点击“打开数据目录”确认监听目录是否正确
 4、点击“定位状态文件”核对当前判定所使用的状态源
 
-# 8、项目结构
+# 9、项目结构
 
 ```text
 agent-status-light-git
@@ -184,14 +215,14 @@ agent-status-light-git
 - `Assets.xcassets`：图标、颜色与资源资产
 - `Audio`：默认提醒音频
 
-# 9、适用场景
+# 10、适用场景
 
 - 你在本地长期同时使用 Claude Code 与 Codex
 - 你经常把 Agent 任务挂在后台，希望一眼知道是否还在运行
 - 你希望在等待输入、授权或确认时尽快收到桌面级反馈
 - 你需要快速定位状态源文件，排查“为什么灯色不对”
 
-# 10、后续方向
+# 11、后续方向
 
 当前项目定位为轻量状态工具，不承担会话执行本身，只负责状态采集、状态聚合和桌面展示。
 
@@ -202,13 +233,13 @@ agent-status-light-git
 - 增加更多菜单栏图标样式与悬浮窗视觉方案
 - 增强通知、提醒和诊断能力
 
-# 11、联系方式
+# 12、联系方式
 
 如果你在使用过程中遇到问题，或希望扩展新的 Agent 状态支持，可以通过以下方式联系：
 
 - 微信：`cxyax_`
 - 邮箱：`gaoxin1153@163.com`
 
-# 12、开源协议
+# 13、开源协议
 
 本项目基于 [MIT License](./LICENSE) 开源。
