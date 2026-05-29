@@ -107,7 +107,7 @@ Agent Status Light 是一个为本地 AI 编码工作流准备的桌面状态感
 ## 6.1、克隆项目
 
 ```bash
-git clone <你的仓库地址>
+git clone https://github.com/cxyax/AgentStatusLight.git
 cd agent-status-light-git
 ```
 

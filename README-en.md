@@ -107,7 +107,7 @@ The project currently depends on some newer system capabilities, including:
 ## 6.1 Clone the repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/cxyax/AgentStatusLight.git
 cd agent-status-light-git
 ```
 
