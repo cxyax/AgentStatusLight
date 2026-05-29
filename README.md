@@ -240,6 +240,10 @@ agent-status-light-git
 - 微信：`cxyax_`
 - 邮箱：`gaoxin1153@163.com`
 
-# 13、开源协议
+# 13、友情链接
+
+- [Linux.do](https://linux.do/)
+
+# 14、开源协议
 
 本项目基于 [MIT License](./LICENSE) 开源。

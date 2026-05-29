@@ -240,6 +240,10 @@ If you run into issues or want support for more agent types, you can reach out t
 - WeChat: `cxyax_`
 - Email: `gaoxin1153@163.com`
 
-# 13. License
+# 13. Friendly Links
+
+- [Linux.do](https://linux.do/)
+
+# 14. License
 
 This project is released under the [MIT License](./LICENSE).
